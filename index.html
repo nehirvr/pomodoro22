@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-container">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+    
+    <main class="timer-card">
+        <header class="timer-header">
+            <h1>Pomodoro</h1>
+            <p id="mode-label">Time to focus</p>
+        </header>
+
+        <div class="settings">
+            <label for="custom-time">Duration (min): </label>
+            <input type="number" id="custom-time" value="25" min="1" max="180" class="time-input">
+        </div>
+
+        <div class="timer-display">
+            <svg class="progress-ring" width="300" height="300">
+                <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.1)" stroke-width="8" fill="transparent" r="140" cx="150" cy="150"/>
+                <circle id="progress" class="progress-ring__circle" stroke="url(#gradient)" stroke-width="8" fill="transparent" r="140" cx="150" cy="150"/>
+                <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#FF5EDF" />
+                        <stop offset="100%" stop-color="#04C8DE" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div id="time-left" class="timer-text">25:00</div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn btn-primary">Start</button>
+            <button id="reset-btn" class="btn btn-secondary">Reset</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
